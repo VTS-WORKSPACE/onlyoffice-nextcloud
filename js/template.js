@@ -67,7 +67,7 @@
             return;
         }
 
-        $.get(OC.generateUrl("apps/" + OCA.Onlyoffice.AppName + "/ajax/template"),
+        $.get(OC.generateUrl("apps/" + OCA.Onlyoffice.AppName + "/ajax/templates"),
             function onSuccess(response) {
                 if (response.error) {
                     OC.Notification.show(response.error, {
@@ -105,8 +105,8 @@
 
     OCA.Onlyoffice.DeleteTemplate = function (templateId, callback) {
         $.ajax({
-            method: "DELETE",
-            url: OC.generateUrl("apps/" + OCA.Onlyoffice.AppName + "/ajax/template?templateId={templateId}",
+            method: "POST",
+            url: OC.generateUrl("apps/" + OCA.Onlyoffice.AppName + "/ajax/delete-template?templateId={templateId}",
             {
                 templateId: templateId
             }),

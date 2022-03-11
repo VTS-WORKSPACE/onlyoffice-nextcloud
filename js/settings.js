@@ -144,7 +144,7 @@
             var demo = $("#onlyofficeDemo").prop("checked");
 
             $.ajax({
-                method: "PUT",
+                method: "POST",
                 url: OC.generateUrl("apps/" + OCA.Onlyoffice.AppName + "/ajax/settings/address"),
                 data: {
                     documentserver: onlyofficeUrl,
@@ -205,7 +205,7 @@
             var reviewDisplay = $("input[type='radio'][name='reviewDisplay']:checked").attr("id").replace("onlyofficeReviewDisplay_", "");
 
             $.ajax({
-                method: "PUT",
+                method: "POST",
                 url: OC.generateUrl("apps/" + OCA.Onlyoffice.AppName + "/ajax/settings/common"),
                 data: {
                     defFormats: defFormats,
@@ -262,7 +262,7 @@
             }
 
             $.ajax({
-                method: "PUT",
+                method: "POST",
                 url: OC.generateUrl("apps/" + OCA.Onlyoffice.AppName + "/ajax/settings/watermark"),
                 data: {
                     settings: watermarkSettings
@@ -295,7 +295,7 @@
             $(".section-onlyoffice").addClass("icon-loading");
 
             $.ajax({
-                method: "DELETE",
+                method: "POST",
                 url: OC.generateUrl("apps/" + OCA.Onlyoffice.AppName + "/ajax/settings/history"),
                 success: function onSuccess(response) {
                     $(".section-onlyoffice").removeClass("icon-loading");
