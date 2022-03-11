@@ -246,7 +246,7 @@
         var version = event.data.version;
 
         $.ajax({
-            method: "PUT",
+            method: "POST",
             url: OC.generateUrl("apps/" + OCA.Onlyoffice.AppName + "/ajax/restore"),
             data: {
                 fileId: OCA.Onlyoffice.fileId || 0,
